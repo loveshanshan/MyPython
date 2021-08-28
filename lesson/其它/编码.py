@@ -1,0 +1,14 @@
+# 常用的编码, ord是转为ASCII， encode编码：
+# GBK : 每个字符占2个字节，16位
+# UTF-8：每个字符最少占1个字节，8位（能覆盖所有ASCII表示）；汉字是3个
+# UTF-16：每个字符最少占2个字节，16位
+# unicode: 万国码，每个字符两个字节，16位
+# 每四位可以用一个16进制表示；每三位可以用一个8进制表示
+# 1字节  1byte=8bit  1KB=1024byte MB ,GB,TB,PB,EB,ZB,YB,NB
+
+
+a = "你"
+print("GBK    :编码", a.encode("GBK"), ord(a))
+print("UTF-8  :编码", a.encode("UTF-8"), ord(a))
+print("UTF-16 :编码", a.encode("UTF-16"), ord(a))
+print("UTF-16 :编码", a.encode("unicode"), ord(a))
