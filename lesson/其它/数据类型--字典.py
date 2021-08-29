@@ -13,8 +13,8 @@ dic.setdefault("newKye", "newValue2")
 print(dic)
 # 删除 pop, del , clear
 dic.pop('a')  # 删除一个并返回键对应的值
-dic.popitem()  # 默认删除最后一个
-del dic['b']  # 删除一个
+dic.popitem()  # 随机删除
+del dic['b']  # 删除一个  不写key则会删除全部
 # dic.clear()  # 清空所有
 print(dic)
 
@@ -26,11 +26,11 @@ print(dic.setdefault('newKye'))  # 没有对应的键时,会返回None， 原字
 #  键时会返回对应的值
 print(dic)
 #  返回所有keys
-print(dic.keys())
-print(dic.values())
-print(dic.items())
-print(dic.popitem())
-print(dic.items())
+print(dic.keys())  # 返回所有的keys
+print(dic.values())  # 返回所有的值
+print(dic.items())  # 返回所有的键值对
+print(dic.popitem())  # 随机删除
+
 
 lia = {"age": 10, "name": "xiaohua", "aihao": "changge"}
 # 直接for 循环，默认拿到的是键
@@ -39,3 +39,17 @@ for x in lia:
 # 直接for 循环，默认拿到的是键
 for x in lia.items():
     print(x)
+
+xx = {}
+xx = xx.fromkeys(("xia", "aa", "asdf"), "x")   # 批量生成一个字典
+print(xx)
+
+
+# is  和 ==区别  , is 是地址相同， == 也可又是值相等
+a = 10
+b = 10
+print(a is b)  # True
+x = [1]
+y = [1]
+print(x is y)  # False
+# 小数据池范围内使用的值，变量有相同的地址
