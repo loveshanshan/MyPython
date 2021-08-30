@@ -1,13 +1,4 @@
 import copy
-# 赋值操作，共用一份数据，改一个，其它列表也会改
-list1 = ["hello", "peiqi", "qiaozhi"]   # 这个列表产生了一个内存地址
-# list1指向头指针，也就是这个列表的首地址
-list2 = list1  # 未产生新的数据，将list1的地址赋值给list2,所以也是列表的首地址-0
-list1.append("lai de")
-print(list1, id(list1))
-print(list2, id(list2))
-
-
 list1 = ["hello", "peiqi", "qiaozhi"]   # 这个列表产生了一个内存地址
 # list1指向头指针，也就是这个列表的首地址
 list2 = list1[:]  # 切片会产生新列表  -->这种浅拷贝， 生成的内容各自会改各自的
@@ -31,3 +22,19 @@ list2[2][0] = "a zhu"
 print(list1, id(list1))
 print(list2, id(list2))
 print(id(list1[2]),  id(list2[1]))
+
+# 赋值操作，共用一份数据，改一个，其它列表也会改
+list1 = ["hello", "peiqi", "qiaozhi"]   # 这个列表产生了一个内存地址
+# list1指向头指针，也就是这个列表的首地址
+list2 = list1  # 未产生新的数据，将list1的地址赋值给list2,所以也是列表的首地址-0
+list1.append("lai de")
+print(list1, id(list1))
+print(list2, id(list2))
+
+
+# list 中有list时的处理情况, 使用赋值时，修改其中一个，也会改变另外一个
+list1 = ['peiqi', 'qiaozhi', ['lai de', 'a li']]
+list2 = list1
+list2[2].append("a zhu")
+print(list1, id(list1))
+print(list2, id(list2))
