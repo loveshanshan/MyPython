@@ -45,11 +45,4 @@ xx = xx.fromkeys(("xia", "aa", "asdf"), "x")   # 批量生成一个字典
 print(xx)
 
 
-# is  和 ==区别  , is 是地址相同， == 也可又是值相等
-a = 10
-b = 10
-print(a is b)  # True
-x = [1]
-y = [1]
-print(x is y)  # False
-# 小数据池范围内使用的值，变量有相同的地址
+

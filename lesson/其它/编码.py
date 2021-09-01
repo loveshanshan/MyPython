@@ -15,6 +15,16 @@ b = "a"
 print("GBK    :编码", a.encode("GBK"), ord(a))
 print("GBK    :编码", b.encode("GBK"), ord(b))
 print("UTF-8  :编码", a.encode("UTF-8"), ord(a))
+# UTF-8下
+# 英文 8bit ,   1byte
+# 欧洲  16bit ,   2 bytes
+# 中文  32bit ,   3 bytes
 print("UTF-8  :编码", b.encode("UTF-8"), ord(b))
 print("UTF-16 :编码", a.encode("UTF-16"), ord(a))
 print("UTF-16 :编码", b.encode("UTF-16"), ord(b))
+
+# python2 默认ASCII码
+# python3 默认UTF-8
+aa = '我r'
+print(len(aa), len(aa.encode("utf-8")))
+# 结果是2，4
