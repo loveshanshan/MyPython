@@ -1,0 +1,13 @@
+import socket
+s_c = socket.socket()
+s_c.connect(("127.0.0.1", 8099))
+s_c.send("你好好".encode("utf-8"))
+d = s_c.recv(1024)
+print(d.decode("utf-8"))
+s_c1 = socket.socket()
+s_c1.connect(("127.0.0.1", 8099))
+s_c1.send("你坏示".encode("utf-8"))
+d = s_c1.recv(1024)
+print(d.decode("utf-8"))
+s_c.close()
+s_c1.close()
